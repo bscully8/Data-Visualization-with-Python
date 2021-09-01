@@ -75,22 +75,22 @@ def compute_data_choice_2(df):
 # Application layout
 app.layout = html.Div(children=[ 
                                 # TODO1: Add title to the dashboard
-                                html.H1('US Domestic Airline Flights Performance', style={'textAlign': 'center', 'color': '#503D36', 'font-size': 24})
+                                html.H1('US Domestic Airline Flights Performance', style={'textAlign': 'center', 'color': '#503D36', 'font-size': 24}),
 
                                 # REVIEW2: Dropdown creation
                                 # Create an outer division 
-                                html.Div([
+                                html.Div(
                                     # Add an division
-                                    html.Div([
+                                    [html.Div([
                                         # Create an division for adding dropdown helper text for report type
                                         html.Div(
                                             [
                                             html.H2('Report Type:', style={'margin-right': '2em'}),
                                             ]
-                                        ),
+                                            ),
                                         # TODO2: Add a dropdown
-                                        dcc.Dropdown(id='input-type', options={'Yearly Airline Performance Report': '....', 'OPT1': '...'},
-                                        {'Yearly Airline Delay Report': '....', 'OPT2': '...'}], placeholder='Select a report type', style={'width' = .80, 'padding' = 3px, 'font size' = 20px, 'text-align-last'='center'})
+                                        dcc.Dropdown(id='input-type', options=[{'label': 'Yearly Airline Performance Report', 'value': 'OPT1'},
+                                        {'label': 'Yearly Airline Delay Report', 'value': 'OPT2'}], placeholder="Select a report type", style={'width' : '80%', 'padding' : '3px', 'font size' : '20px', 'text-align-last':'center'})
                                     # Place them next to each other using the division style
                                     ], style={'display':'flex'}),
                                     
